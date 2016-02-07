@@ -1,2 +1,29 @@
-# ArduinoCmdr
-Light weight Arduino interface
+#
+# ArduinoCmdr - A simple serial io framework for Arduino and Arduino like
+#               boards.
+#
+# By Scott Beasley 2016
+#
+# Free to use and change. Enjoy :)
+#
+
+Light weight Arduino or Ardiuino like board interface via Serial io.
+
+It is meant to be smaller than protocols like Firmata. Due to it's size and
+simplicity, it should run on many smaller controller boards and processors.
+
+The interface gives access to the following Wiring/Arduino functions:
+
+    pinMode
+    digitalWrite
+    digitalRead
+    analogWrite
+    analogRead
+
+With these few functions, you can do most things needed in many projects.
+It should be easy to extend, and add other built-in or user functions.
+
+To use, compile the file in the arduino folder of the project, to your
+controller. You can then run one of the examples with the controller hooked up
+to your computer's usb port. Just change the example to use whatever comport
+your controller is on.

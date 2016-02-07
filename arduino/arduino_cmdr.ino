@@ -1,9 +1,17 @@
+/*
+ ArduinoCmdr - A simple serial io framework for Arduino and Arduino like
+               boards.
+
+ By Scott Beasley 2016
+
+ Free to use and change. Enjoy :)
+*/
+
 void setup ( )
 {
    // Change the baud rates here if different than below
-   Serial.begin (9600);
+   Serial.begin (19200);
    delay (250);
-//   Serial.flush ( );
 }
 
 void loop ( )
@@ -22,7 +30,6 @@ void loop ( )
    //Serial.println (cmd);
    if (cmd.charAt (0) != '@') {
       Serial.flush ( );
-//      Serial.println ("No @");
       return;
    }
 
@@ -33,8 +40,6 @@ void loop ( )
       case '0':
          pin = cmd.substring (2, 4);
          val = cmd.substring (4);
-  // Serial.println (pin);
-  // Serial.println (val);
          if (val == "INPUT") value = INPUT;
          else if (val == "OUTPUT") value = OUTPUT;
          else if (val == "INPUT_PULLUP") value = INPUT_PULLUP;
@@ -43,7 +48,6 @@ void loop ( )
 
       case '1':
          pin = cmd.substring (2, 4);
-//   Serial.println (pin);
          val = cmd.substring (4);
          if (val == "HIGH") value = HIGH;
          else if (val == "LOW") value = LOW;
@@ -75,5 +79,4 @@ void loop ( )
    }
 
    Serial.flush ( );
-//   delay(125);
 }

@@ -1,7 +1,7 @@
 package require ArduinoCmdr
 
-set board [::Arduino::arduinoOpen {\\.\COM11}]
-after 2000
+set board [::Arduino::arduinoOpen {\\.\COM11} 19200]
+after 1000
 ::Arduino::pinMode $board 13 OUTPUT
 after 100
 

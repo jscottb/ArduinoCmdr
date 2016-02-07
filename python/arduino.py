@@ -1,6 +1,14 @@
+#
+# ArduinoCmdr - A simple serial io framework for Arduino and Arduino like
+#               boards.
+#
+# By Scott Beasley 2016
+#
+# Free to use and change. Enjoy :)
+#
+
 import sys
 import serial
-import time
 
 def arduinoOpen (port, baudrate = 115200):
     ser = serial.Serial (port, baudrate)
@@ -20,7 +28,7 @@ def digitalWrite (board, pin, value):
 def digitalRead (board, pin):
     cmd = "@2" + str (pin)
     sendData (board, cmd)
-    return formatPinState (board.read ( ))
+    return formatPinState (getData ( ))
 
 def analogWrite (board, pin, value):
     cmd = "@3" + str (pin) + value
@@ -43,16 +51,3 @@ def formatPinState (pinValue):
        return True
     else:
        return False
-
-if __name__ == '__main__':
-    board = arduinoOpen ("\\\\.\\COM11", 115200)
-    time.sleep (1)
-    pinMode (board, 13, "OUTPUT")
-    time.sleep (1)
-
-    while 1:
-        digitalWrite (board, 13, "HIGH")
-        time.sleep (1)
-        digitalWrite (board, 13, "LOW")
-        time.sleep (1)
-        print analogRead (board, 0)

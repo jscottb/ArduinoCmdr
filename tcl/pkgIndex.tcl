@@ -8,4 +8,4 @@
 # script is sourced, the variable $dir must contain the
 # full path name of this file's directory.
 
-package ifneeded ArduinoCmdr 1.0 [list source [file join $dir arduinocmdr.tcl]]
+package ifneeded ArduinoCmdr 1.0 [list source [file join $dir arduino.tcl]]
