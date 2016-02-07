@@ -1,3 +1,5 @@
+package provide ArduinoCmdr 1.0
+
 namespace eval Arduino {
     namespace export arduinoOpen pinMode digitalWrite digitalRead \
                      analogRead analogWrite close
@@ -60,17 +62,4 @@ namespace eval Arduino {
             return false
       }
     }
-}
-
-set board [::Arduino::arduinoOpen com8:]
-after 2000
-::Arduino::pinMode $board 13 OUTPUT
-after 100
-
-while {1} {
-   ::Arduino::digitalWrite $board 13 {HIGH}
-   after 1000
-   ::Arduino::digitalWrite $board 13 {LOW}
-   after 1000
-   puts [::Arduino::analogRead $board 0]
 }
