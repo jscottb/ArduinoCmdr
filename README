@@ -28,10 +28,16 @@ controller. You can then run one of the examples with the controller hooked up
 to your computer's usb port. Just change the example to use whatever comport
 your controller is on.
 
+I have tested it with a real Uno, a clone Uno, a Nano clone with an Atmega168
+and a Ti Launch Pad Stellaris. It compiled and worked on each. You have to dig
+around for the Ti Pin numbers, but testing Pin 30 for the RED_LED worked. I plan
+to make board mappings in the client libraries.
+
 TODO:
   - Documentation.
   - Finish the Python library.
   - Add a Nodejs library.
   - More examples.
   - Add optional servo version.
-    
+  - Add Personality settings for different controller boards. This will be a
+    client side change only.
