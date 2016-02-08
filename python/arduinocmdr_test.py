@@ -13,4 +13,5 @@ if __name__ == '__main__':
         time.sleep (1)
         arduino.digitalWrite (board, 13, "LOW")
         time.sleep (1)
-        #print arduino.analogRead (board, 0)
+        print arduino.analogRead (board, 0)
+        #time.sleep (.150)

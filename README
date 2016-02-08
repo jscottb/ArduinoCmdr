@@ -27,3 +27,11 @@ To use, compile the file in the arduino folder of the project, to your
 controller. You can then run one of the examples with the controller hooked up
 to your computer's usb port. Just change the example to use whatever comport
 your controller is on.
+
+TODO:
+  - Documentation.
+  - Finish the Python library.
+  - Add a Nodejs library.
+  - More examples.
+  - Add optional servo version.
+    

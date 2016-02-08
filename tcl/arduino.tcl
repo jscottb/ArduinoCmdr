@@ -13,7 +13,7 @@ namespace eval Arduino {
     namespace export arduinoOpen pinMode digitalWrite digitalRead \
                      analogRead analogWrite close
 
-    proc ::Arduino::arduinoOpen {port {baudrate 115200}} {
+    proc ::Arduino::arduinoOpen {port {baudrate 19200}} {
         set fh [open $port "RDWR"]
         fconfigure $fh -mode "$baudrate,n,8,1"
         fconfigure $fh -blocking 1 -timeout 100 -buffersize 0
